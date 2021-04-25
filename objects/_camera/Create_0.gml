@@ -13,3 +13,6 @@ follow_target = undefined
 view_zoom = 1
 view_zoom_min = 1
 view_zoom_max = 20
+
+x = 0
+y = 0

@@ -3,8 +3,10 @@
 event_inherited()
 
 hp = 7
+xp_drop = 2
 
-move_speed = 0.07
-max_speed = 1.5
+move_speed = 0.03
+max_speed = 1.7
 do_x_flip = false
-follow_range = 140
+follow_range = 130
+following = false

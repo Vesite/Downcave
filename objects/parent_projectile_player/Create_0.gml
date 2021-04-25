@@ -1,5 +1,8 @@
 /// @desc
 
+event_inherited()
+
 //Default
 damage = 1
-time_alive = 10
+
+

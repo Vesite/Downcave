@@ -1,11 +1,19 @@
 /// @desc
 
+if P exit
+
+if player_alive_state = PLAYER_ALIVE_STATE.DEAD {
+	exit
+}
+
 var _input = _input_manager
 
 //TEST KNOCKBACK
 if DEV {
+	
 if keyboard_check_pressed(ord("Y")) {
-	hsp += 3	
+	player_xp += 5
+	event_user(2)
 }
 
 if keyboard_check(vk_space) {
@@ -13,13 +21,32 @@ if keyboard_check(vk_space) {
 }
 }
 
+if hp <= 0 {
+	event_user(0)	
+}
+
+//Set "player_biome_in_currently"
+var _id = collision_point(x, y, bg_big, false, true)
+if _id != noone {
+	
+	if _id.sprite_index == s_bg_big_rock
+		player_biome_in_currently = BIOME.ROCK
+	else if _id.sprite_index == s_bg_big_sandstone
+		player_biome_in_currently = BIOME.SAND
+	else if _id.sprite_index == s_bg_big_crystal
+		player_biome_in_currently = BIOME.CRYSTAL
+	
+}
 
 // Set "player_movement_state"
-if place_meeting(x, y + 1, parent_collision)
+if place_meeting(x, y + 1, parent_collision) {
+	if player_movement_state == PLAYER_MOVEMENT_STATE.AIR {
+		play_sound_ij(sfx_jump_15_landing, 0.9, 1.1)
+	}
 	player_movement_state = PLAYER_MOVEMENT_STATE.ON_GROUND
-else
+} else {
 	player_movement_state = PLAYER_MOVEMENT_STATE.AIR
-
+}
 #region Horizontal
 
 	var dir = _input.right_hold - _input.left_hold
@@ -53,6 +80,26 @@ else
 
 #region Jump
 
+//Extra Jumps
+if (player_movement_state == PLAYER_MOVEMENT_STATE.ON_GROUND) {
+	extra_jumps_ready = extra_jumps_amount	
+}
+if (player_movement_state == PLAYER_MOVEMENT_STATE.AIR) {
+	
+	if _input.action_1_clicked and extra_jumps_ready > 0 {
+		extra_jumps_ready -= 1
+		vsp = vsp*0.2
+		vsp -= jump_power*2.2
+		with (instance_create_layer(x, y + 13, "Projectiles", play_anim)) {
+			sprite_index = s_smoke_1
+		}
+		
+		play_sound_ij(sfx_jump_special, 0.9, 1.1)
+		
+	}
+	
+}
+
 jump_pressed_remember = max(jump_pressed_remember - 1, 0)
 jump_timer = max(jump_timer - 1, 0)
 
@@ -68,12 +115,16 @@ if (jump_pressed_remember > 0) and (player_movement_state == PLAYER_MOVEMENT_STA
 	vsp -= jump_power
 	jump_timer = jump_timer_duration
 	
+	play_sound_ij(sfx_jump_15, 0.9, 1.1)
+	
 }
 
 //Add height to jump
 if (_input.action_1_hold) and (jump_timer > 0) {
 	vsp -= jump_adding	
 }
+
+
 
 #endregion
 
@@ -151,9 +202,17 @@ if x < 0 or x > room_width {
 	
 }
 
-//Energy % Regen
-weapon_energy += weapon_energy_max/(60*16)
+invis_frames = max(invis_frames - 1, 0)
 
-weapon_energy += weapon_energy_flat_regen
+//Energy % Regen
+weapon_energy_regen_total = weapon_energy_max/(60*10) + weapon_energy_flat_regen
+weapon_energy += weapon_energy_regen_total
 
 weapon_energy = min(weapon_energy, weapon_energy_max)
+
+if hsp > 0 { image_xscale = -1 }
+else if hsp < 0 { image_xscale = 1 }
+
+weapon_offset_x = weapon_offset_x_value*image_xscale
+
+

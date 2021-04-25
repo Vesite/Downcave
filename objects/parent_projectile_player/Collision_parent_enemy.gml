@@ -2,6 +2,7 @@
 
 other.hp -= damage
 other.flash = flash_add
+other.following = true
 
 if other.hp <= 0 {
 
@@ -10,5 +11,7 @@ if other.hp <= 0 {
 	}
 	
 }
+
+play_sound_ij(sfx_impact, 0.8, 1.2)
 
 instance_destroy()

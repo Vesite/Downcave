@@ -1,8 +1,16 @@
 /// @desc
 
+if P exit
+
 //Move towards the player if they are near
 
 if point_distance(x, y, player.x, player.y) < follow_range {
+	
+	following = true
+	
+}
+
+if following {
 	
 	if do_x_flip {
 		if (player.x > x)	//THen the player is on the right side!

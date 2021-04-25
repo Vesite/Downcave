@@ -1,9 +1,9 @@
 
-draw_set_halign(fa_center)
-draw_set_valign(fa_middle)
-draw_set_font(font_pixel_12x)
+
 
 #macro SINGLETON_OBJ_DEPTH -1000
+
+#macro P (global.paused = true)
 
 #macro DEV false
 #macro dev:DEV true
@@ -21,5 +21,3 @@ draw_set_font(font_pixel_12x)
 #macro PLAYER_BASE_FRIC_AIR 0.05
 #macro PLAYER_BASE_FRIC 0.1
 #macro GRAVITY 0.24
-
-#macro PLAYER_BASE 1

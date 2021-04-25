@@ -25,4 +25,8 @@ if (assign_singleton() == false)	exit
 	
 	display_set_gui_size(global.view_width, global.view_height)
 	
+	//Start in fullscreen
+	window_set_fullscreen(true)
+	surface_resize(application_surface, display_get_width(), display_get_height())	
+	
 #endregion
