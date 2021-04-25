@@ -23,7 +23,7 @@ with (instance_create_layer(x, y, "Projectiles", shotgun_bullet)) {
 	
 }
 
-repeat (irandom_range(7, 10)) {
+repeat (irandom_range(9, 13)) {
 	
 	with (instance_create_layer(x, y, "Projectiles", shotgun_bullet)) {
 	

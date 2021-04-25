@@ -3,7 +3,7 @@
 event_inherited()
 
 hp = 7
-xp_drop = 2
+xp_drop = 3
 
 move_speed = 0.03
 max_speed = 1.7

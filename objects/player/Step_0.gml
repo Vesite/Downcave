@@ -89,7 +89,7 @@ if (player_movement_state == PLAYER_MOVEMENT_STATE.AIR) {
 	if _input.action_1_clicked and extra_jumps_ready > 0 {
 		extra_jumps_ready -= 1
 		vsp = vsp*0.2
-		vsp -= jump_power*2.2
+		vsp -= jump_power*2.7
 		with (instance_create_layer(x, y + 13, "Projectiles", play_anim)) {
 			sprite_index = s_smoke_1
 		}

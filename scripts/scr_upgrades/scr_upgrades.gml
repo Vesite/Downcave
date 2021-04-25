@@ -23,11 +23,15 @@ function spawn_new_weapon(_weapon) {
 
 function show_assets() {
 	
+	with (_pause) { event_user(1) }
+	
 	with (_pause) { event_user(4) }
 	
 }
 
 function show_info() {
+	
+	with (_pause) { event_user(1) }
 	
 	with (_pause) { event_user(5) }
 	
@@ -50,6 +54,14 @@ function get_upgrade_hp_1() {
 function get_upgrade_hp_2() {
 	
 	player.hp += 2
+	
+	with (_pause) { event_user(1) }
+	
+}
+
+function get_upgrade_hp_4() {
+	
+	player.hp += 4
 	
 	with (_pause) { event_user(1) }
 	
@@ -123,6 +135,15 @@ function get_bonus_energy_from_orb() {
 function get_bonus_jump() {
 	
 	player.extra_jumps_amount += 1
+	player.extra_jumps_ready = player.extra_jumps_amount
+	
+	with (_pause) { event_user(1) }
+	
+}
+
+function get_bonus_jump_2() {
+	
+	player.extra_jumps_amount += 2
 	player.extra_jumps_ready = player.extra_jumps_amount
 	
 	with (_pause) { event_user(1) }

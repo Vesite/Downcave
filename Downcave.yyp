@@ -80,6 +80,7 @@
     {"id":{"name":"s_shotgun","path":"sprites/s_shotgun/s_shotgun.yy",},"order":11,},
     {"id":{"name":"sfx_die","path":"sounds/sfx_die/sfx_die.yy",},"order":10,},
     {"id":{"name":"sfx_gun","path":"sounds/sfx_gun/sfx_gun.yy",},"order":4,},
+    {"id":{"name":"sfx_get_weapon","path":"sounds/sfx_get_weapon/sfx_get_weapon.yy",},"order":18,},
     {"id":{"name":"s_triple_gun_bullet","path":"sprites/s_triple_gun_bullet/s_triple_gun_bullet.yy",},"order":10,},
     {"id":{"name":"sfx_take_dmg","path":"sounds/sfx_take_dmg/sfx_take_dmg.yy",},"order":9,},
     {"id":{"name":"parent_projectile_player","path":"objects/parent_projectile_player/parent_projectile_player.yy",},"order":6,},

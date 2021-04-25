@@ -102,7 +102,7 @@ function generate_chunk(_depth_var, _y_start, _chunk_grid, _have_weapon, _biome)
 	#region Spawn enemies
 	
 		var _max = 2 + ((_y_start)/(round((32*CHUNK_HEIGHT))*3)) //The higher this number is the more enemies
-		var _max_2 = 2 + _depth_var/2.5 + 0.1*power(_depth_var, 1.06) //The higher this number is the more enemies
+		var _max_2 = 2 + _depth_var/2.5 + 0.1*power(_depth_var, 1.08) //The higher this number is the more enemies
 		var _enemy_amount = irandom_range(0, _max_2)
 		show_debug_message("Enemies Tried to Spawn 1: 0 - " + string(_max))
 		show_debug_message("Enemies Tried to Spawn 2: 0 - " + string(_max_2))
