@@ -8,5 +8,5 @@ time_alive = 90
 flash_add = 3
 
 bounce = true
-
+bounce_factor = 1.1
 

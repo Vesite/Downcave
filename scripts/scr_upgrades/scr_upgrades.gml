@@ -43,58 +43,58 @@ function func_exit_pasue() {
 	
 }
 
-function get_upgrade_hp_1() {
+//function get_upgrade_hp_1() {
 	
-	player.hp += 1
+//	player.hp += 1
+	
+//	with (_pause) { event_user(1) }
+	
+//}
+
+function get_upgrade_hp_3() {
+	
+	player.hp += 3
 	
 	with (_pause) { event_user(1) }
 	
 }
 
-function get_upgrade_hp_2() {
+//function get_upgrade_hp_4() {
 	
-	player.hp += 2
+//	player.hp += 4
+	
+//	with (_pause) { event_user(1) }
+	
+//}
+
+
+//function get_upgrade_damage_30() {
+	
+//	player.damage_factor += 0.3
+	
+//	with (_pause) { event_user(1) }
+	
+//}
+
+function get_upgrade_damage_25() {
+	
+	player.damage_factor += 0.25
 	
 	with (_pause) { event_user(1) }
 	
 }
 
-function get_upgrade_hp_4() {
+//function get_upgrade_as_30() {
 	
-	player.hp += 4
+//	player.as_factor += 0.3
 	
-	with (_pause) { event_user(1) }
+//	with (_pause) { event_user(1) }
 	
-}
+//}
 
-
-function get_upgrade_damage_30() {
+function get_upgrade_as_25() {
 	
-	player.damage_factor += 0.3
-	
-	with (_pause) { event_user(1) }
-	
-}
-
-function get_upgrade_damage_20() {
-	
-	player.damage_factor += 0.2
-	
-	with (_pause) { event_user(1) }
-	
-}
-
-function get_upgrade_as_30() {
-	
-	player.as_factor += 0.3
-	
-	with (_pause) { event_user(1) }
-	
-}
-
-function get_upgrade_as_20() {
-	
-	player.as_factor += 0.2
+	player.as_factor += 0.25
 	
 	with (_pause) { event_user(1) }
 	
@@ -110,7 +110,7 @@ function get_reduce_hori_knockback() {
 
 function get_xp_orbs_lasts_longer() {
 	
-	player.xp_orb_duration_factor += 0.9
+	player.xp_orb_duration_extra += 10
 	
 	with (_pause) { event_user(1) }
 	
@@ -125,8 +125,37 @@ function get_better_xp_orb_magnet() {
 }
 
 function get_bonus_energy_from_orb() {
+
+	player.orb_energy_gain += 3
 	
-	player.orb_energy_factor += 1
+	with (_pause) { event_user(1) }
+	
+}
+
+//function get_bonus_jump() {
+	
+//	player.extra_jumps_amount += 1
+//	player.extra_jumps_ready = player.extra_jumps_amount
+	
+//	with (_pause) { event_user(1) }
+	
+//}
+
+function get_bonus_damage_hp() {
+	
+	player.damage_factor += 0.5
+	
+	player.hp -= 4
+	
+	with (instance_create_layer(player.x, player.y - 12, "Top", draw_damage)) {
+		text = 4
+	}
+	
+	with (player) {
+		
+		event_user(1)	
+	
+	}
 	
 	with (_pause) { event_user(1) }
 	
@@ -134,17 +163,15 @@ function get_bonus_energy_from_orb() {
 
 function get_bonus_jump() {
 	
-	player.extra_jumps_amount += 1
-	player.extra_jumps_ready = player.extra_jumps_amount
+	with (player) {
+		
+		extra_jumps_amount += 2
+		extra_jumps_ready = extra_jumps_amount
 	
-	with (_pause) { event_user(1) }
-	
-}
-
-function get_bonus_jump_2() {
-	
-	player.extra_jumps_amount += 2
-	player.extra_jumps_ready = player.extra_jumps_amount
+		weapon_energy_max -= 4
+		weapon_energy = max(weapon_energy, 0)
+		
+	}
 	
 	with (_pause) { event_user(1) }
 	

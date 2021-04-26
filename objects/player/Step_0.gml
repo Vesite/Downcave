@@ -11,14 +11,19 @@ var _input = _input_manager
 //TEST KNOCKBACK
 if DEV {
 	
-if keyboard_check_pressed(ord("Y")) {
-	player_xp += 5
-	event_user(2)
-}
+	if keyboard_check_pressed(ord("Y")) {
+		player_xp += 20
+		event_user(2)
+	}
 
-if keyboard_check(vk_space) {
-	vsp -= 3	
-}
+	if keyboard_check_pressed(ord("U")) {
+		y += 400
+	}
+
+	if keyboard_check(vk_space) {
+		vsp -= 3	
+	}
+	
 }
 
 if hp <= 0 {
@@ -35,6 +40,8 @@ if _id != noone {
 		player_biome_in_currently = BIOME.SAND
 	else if _id.sprite_index == s_bg_big_crystal
 		player_biome_in_currently = BIOME.CRYSTAL
+	else if _id.sprite_index == s_bg_big_flesh
+		player_biome_in_currently = BIOME.FLESH
 	
 }
 
@@ -47,6 +54,7 @@ if place_meeting(x, y + 1, parent_collision) {
 } else {
 	player_movement_state = PLAYER_MOVEMENT_STATE.AIR
 }
+
 #region Horizontal
 
 	var dir = _input.right_hold - _input.left_hold

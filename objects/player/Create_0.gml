@@ -36,9 +36,9 @@ damage_factor = 1
 as_factor = 1
 horizontal_kb_factor = 1
 vertical_kb_factor = 1
-xp_orb_duration_factor = 1
+xp_orb_duration_extra = 0
 xp_orb_magnet_factor = 1
-orb_energy_factor = 1
+orb_energy_gain = 4
 
 extra_jumps_amount = 0
 extra_jumps_ready = 0

@@ -8,12 +8,16 @@ depth_var = 1
 chunks_until_weapon = choose(3, 4, 4, 5)
 chunks_until_biome_change = choose(7, 7, 8, 8, 9, 10, 11)
 
-biome = choose(BIOME.SAND, BIOME.ROCK, BIOME.CRYSTAL)
+#macro RANDOM_BIOME (choose(BIOME.SAND, BIOME.ROCK, BIOME.CRYSTAL, BIOME.FLESH))
+#macro START_BIOME (choose(BIOME.SAND, BIOME.ROCK, BIOME.CRYSTAL))
+
+biome = START_BIOME
 enum BIOME {
 	
 	ROCK,
 	SAND,
-	CRYSTAL
+	CRYSTAL,
+	FLESH
 	
 }
 previous_biome = biome
@@ -99,18 +103,18 @@ add_grid_chunk_line(_chunk_2, 4, "11100R11R000111")
 ds_list_add(chunk_list_sand, _chunk_2)
 
 var _chunk_3 = ds_grid_create(CHUNK_WIDTH, CHUNK_HEIGHT)
-add_grid_chunk_line(_chunk_3, 0, "11R000001000111")
+add_grid_chunk_line(_chunk_3, 0, "11R00000R000111")
 add_grid_chunk_line(_chunk_3, 1, "11R000011100R11")
 add_grid_chunk_line(_chunk_3, 2, "110000111110011")
 add_grid_chunk_line(_chunk_3, 3, "110001111111011")
-add_grid_chunk_line(_chunk_3, 4, "11R000R00000011")
+add_grid_chunk_line(_chunk_3, 4, "11R000R1R000011")
 ds_list_add(chunk_list_sand, _chunk_3)
 
 var _chunk_4 = ds_grid_create(CHUNK_WIDTH, CHUNK_HEIGHT)
-add_grid_chunk_line(_chunk_4, 0, "111000000R00R11")
-add_grid_chunk_line(_chunk_4, 1, "110011000000011")
+add_grid_chunk_line(_chunk_4, 0, "111000000000R11")
+add_grid_chunk_line(_chunk_4, 1, "11001R000000R11")
 add_grid_chunk_line(_chunk_4, 2, "110110010010R11")
-add_grid_chunk_line(_chunk_4, 3, "11R100111111R11")
+add_grid_chunk_line(_chunk_4, 3, "11R100R11111R11")
 add_grid_chunk_line(_chunk_4, 4, "110000000000011")
 ds_list_add(chunk_list_sand, _chunk_4)
 
@@ -129,8 +133,8 @@ add_grid_chunk_line(_chunk_1, 4, "110000000000R11")
 ds_list_add(chunk_list_crystal, _chunk_1)
 
 var _chunk_2 = ds_grid_create(CHUNK_WIDTH, CHUNK_HEIGHT)
-add_grid_chunk_line(_chunk_2, 0, "1R00R0000100R11")
-add_grid_chunk_line(_chunk_2, 1, "1R00100000000R1")
+add_grid_chunk_line(_chunk_2, 0, "1R00R0000000011")
+add_grid_chunk_line(_chunk_2, 1, "1R001000000R0R1")
 add_grid_chunk_line(_chunk_2, 2, "10001000R0000R1")
 add_grid_chunk_line(_chunk_2, 3, "1R0010001000011")
 add_grid_chunk_line(_chunk_2, 4, "1100R000R000R11")
@@ -140,20 +144,66 @@ var _chunk_3 = ds_grid_create(CHUNK_WIDTH, CHUNK_HEIGHT)
 add_grid_chunk_line(_chunk_3, 0, "1R0000110000R11")
 add_grid_chunk_line(_chunk_3, 1, "11R0001100000R1")
 add_grid_chunk_line(_chunk_3, 2, "11R000R10000R11")
-add_grid_chunk_line(_chunk_3, 3, "1R000001R000011")
-add_grid_chunk_line(_chunk_3, 4, "110000011000R11")
+add_grid_chunk_line(_chunk_3, 3, "1R00R0010000011")
+add_grid_chunk_line(_chunk_3, 4, "110000010000R11")
 ds_list_add(chunk_list_crystal, _chunk_3)
 
 var _chunk_4 = ds_grid_create(CHUNK_WIDTH, CHUNK_HEIGHT)
-add_grid_chunk_line(_chunk_4, 0, "1R0001000100111")
+add_grid_chunk_line(_chunk_4, 0, "1R0001000000111")
 add_grid_chunk_line(_chunk_4, 1, "11R001000R0R0R1")
 add_grid_chunk_line(_chunk_4, 2, "1000010000010R1")
 add_grid_chunk_line(_chunk_4, 3, "1R000R00R000011")
 add_grid_chunk_line(_chunk_4, 4, "110000001000R11")
 ds_list_add(chunk_list_crystal, _chunk_4)
 
+var _chunk_5 = ds_grid_create(CHUNK_WIDTH, CHUNK_HEIGHT)
+add_grid_chunk_line(_chunk_5, 0, "110000000000011")
+add_grid_chunk_line(_chunk_5, 1, "100010000000111")
+add_grid_chunk_line(_chunk_5, 2, "100010000R11111")
+add_grid_chunk_line(_chunk_5, 3, "1R0010000000111")
+add_grid_chunk_line(_chunk_5, 4, "1100R0000000011")
+ds_list_add(chunk_list_crystal, _chunk_5)
+
+
 
 #endregion
 
+#region Chunks Flesh
+
+chunk_list_flesh = ds_list_create()
+
+chunk_1 = ds_grid_create(CHUNK_WIDTH, CHUNK_HEIGHT)
+add_grid_chunk_line(chunk_1, 0, "1110000R0000R11")
+add_grid_chunk_line(chunk_1, 1, "11R000R11100R11")
+add_grid_chunk_line(chunk_1, 2, "11R00001R00R111")
+add_grid_chunk_line(chunk_1, 3, "11R0R00R000R111")
+add_grid_chunk_line(chunk_1, 4, "11R000000000R11")
+ds_list_add(chunk_list_flesh, chunk_1)
+
+chunk_2 = ds_grid_create(CHUNK_WIDTH, CHUNK_HEIGHT)
+add_grid_chunk_line(chunk_2, 0, "11R000000000R11")
+add_grid_chunk_line(chunk_2, 1, "111111R00000R11")
+add_grid_chunk_line(chunk_2, 2, "11R000001100R11")
+add_grid_chunk_line(chunk_2, 3, "11R00R111000R11")
+add_grid_chunk_line(chunk_2, 4, "11R000R00000R11")
+ds_list_add(chunk_list_flesh, chunk_2)
+
+chunk_3 = ds_grid_create(CHUNK_WIDTH, CHUNK_HEIGHT)
+add_grid_chunk_line(chunk_3, 0, "11R000000111111")
+add_grid_chunk_line(chunk_3, 1, "111RRRR0000R111")
+add_grid_chunk_line(chunk_3, 2, "111111111100R11")
+add_grid_chunk_line(chunk_3, 3, "11R0R1111000R11")
+add_grid_chunk_line(chunk_3, 4, "11R000110000R11")
+ds_list_add(chunk_list_flesh, chunk_3)
+
+chunk_4 = ds_grid_create(CHUNK_WIDTH, CHUNK_HEIGHT)
+add_grid_chunk_line(chunk_4, 0, "11R000000R11111")
+add_grid_chunk_line(chunk_4, 1, "111R11R0R111111")
+add_grid_chunk_line(chunk_4, 2, "111111R01111R11")
+add_grid_chunk_line(chunk_4, 3, "11R0R000R1RRR11")
+add_grid_chunk_line(chunk_4, 4, "11R0R0000000R11")
+ds_list_add(chunk_list_flesh, chunk_4)
+
+#endregion
 
 previous_chunk = chunk_1

@@ -10,3 +10,5 @@ max_speed = 1.7
 do_x_flip = false
 follow_range = 130
 following = false
+
+event_user(2)

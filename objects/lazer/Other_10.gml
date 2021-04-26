@@ -27,10 +27,21 @@ for (var i = 0; i < ds_list_size(_list); ++i) {
     var _inst = ds_list_find_value(_list, i)
 	with (_inst) {
 		
+		if _inst.object_index == tentacle or _inst.object_index == tentacle_extra {
+			repeat (6) {
+				with (instance_create_layer(_inst.x, _inst.y, "Projectiles", flamethrower_bullet)) {
+					image_angle = irandom_range(0, 360)
+					hsp = random_range(-0.3, 0.3)
+					vsp = random_range(0.5, 2)
+				}
+			}
+				
+		}
+		
 		hp -= other.damage*player.damage_factor
 		flash = irandom_range(5, 7)
 		following = true
-
+		
 		if hp <= 0 {
 
 			event_user(0)	

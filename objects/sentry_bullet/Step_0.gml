@@ -7,9 +7,9 @@ if P exit
 
 image_angle = point_direction(x, y, x + hsp*10, y + vsp*10)
 
-vsp -= 0.12
+vsp -= 0.11
 
-vsp = vsp*0.96
+vsp = vsp*0.945
 
 //move slighly towards the player
 //var _dir = point_direction(x, y, player.x, player.y)

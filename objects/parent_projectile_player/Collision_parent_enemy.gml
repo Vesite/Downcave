@@ -12,6 +12,9 @@ if other.hp <= 0 {
 	
 }
 
-play_sound_ij(sfx_impact, 0.8, 1.2)
+play_sound_ij(hit_sound, 0.8, 1.2)
 
-instance_destroy()
+pierce = max(pierce - 1, 0)
+if pierce == 0 {
+	instance_destroy()
+}

@@ -9,14 +9,14 @@ if time_alive == 0
 if bounce {
 	
 	//Bounce
-	if place_meeting(x + hsp, y, parent_collision) {
+	if collision_circle(x + hsp, y, 2, parent_collision, false, true) {
 		
-		hsp = -hsp
+		hsp = -hsp*bounce_factor
 	}
 	
 	//Bounce
-	if place_meeting(x, y + vsp, parent_collision) {
-		vsp = -vsp
+	if collision_circle(x, y + vsp, 2, parent_collision, false, true) {
+		vsp = -vsp*bounce_factor
 	}	
 
 }

@@ -37,14 +37,28 @@ function generate_chunk(_depth_var, _y_start, _chunk_grid, _have_weapon, _biome)
 		        var _bg_sprite = s_bg_big_sandstone
 				var _wall_sprite = s_sandstone
 				ds_list_add(_enemies_below_list, tentacle)
-				_enemy_below_mult = 4
+				ds_list_add(_enemies_below_list, tentacle)
+				ds_list_add(_enemies_below_list, tentacle)
+				ds_list_add(_enemies_below_list, mummy)
+				_enemy_below_mult = 3
 				ds_list_add(_enemies_above_list, mummy)
-				_enemy_above_mult = 1.3
+				_enemy_above_mult = 1.1
 		    break;
 			case BIOME.CRYSTAL:
 		        var _bg_sprite = s_bg_big_crystal
 				var _wall_sprite = s_crystal
 				ds_list_add(_enemies_below_list, sentry)
+				ds_list_add(_enemies_below_list, slime)
+				ds_list_add(_enemies_below_list, slime)
+				_enemy_below_mult = 1.2
+		    break;
+			case BIOME.FLESH:
+		        var _bg_sprite = s_bg_big_flesh
+				var _wall_sprite = s_wall_flesh
+				ds_list_add(_enemies_below_list, ball)
+				ds_list_add(_enemies_below_list, ball)
+				ds_list_add(_enemies_below_list, chest)
+				_enemy_below_mult = 1.4
 		    break;
 		}
 		
@@ -101,14 +115,14 @@ function generate_chunk(_depth_var, _y_start, _chunk_grid, _have_weapon, _biome)
 	
 	#region Spawn enemies
 	
-		var _max = 2 + ((_y_start)/(round((32*CHUNK_HEIGHT))*3)) //The higher this number is the more enemies
-		var _max_2 = 2 + _depth_var/2.5 + 0.1*power(_depth_var, 1.08) //The higher this number is the more enemies
+		//var _max = 2 + ((_y_start)/(round((32*CHUNK_HEIGHT))*3)) //The higher this number is the more enemies
+		var _max_2 = 4 + _depth_var/2.5 + 0.1*power(_depth_var, 1.3) + 0.02*power(_depth_var, 1.7) //The higher this number is the more enemies
 		var _enemy_amount = irandom_range(0, _max_2)
-		show_debug_message("Enemies Tried to Spawn 1: 0 - " + string(_max))
+		//show_debug_message("Enemies Tried to Spawn 1: 0 - " + string(_max))
 		show_debug_message("Enemies Tried to Spawn 2: 0 - " + string(_max_2))
 		
 		//Spawn enemies above
-		if (ds_list_size(_enemies_above_list) > 0) and (_depth_var > 3) {
+		if (ds_list_size(_enemies_above_list) > 0) and (_depth_var > 1) {
 			for (var _i = 0; _i < (round(_enemy_amount*_enemy_above_mult)); _i++) {
 		
 			    var _x = random_range(0, GAME_WIDTH)

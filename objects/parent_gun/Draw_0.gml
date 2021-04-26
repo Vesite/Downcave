@@ -11,5 +11,5 @@ draw_set_color(c_gray)
 draw_rectangle(_x_start, _y_start, _x_start + _l, _y_start + _h, false)
 
 draw_set_color(c_green)
-	draw_rectangle(_x_start, _y_start, _x_start + _l*(1 - (attack_cd/attack_cd_value)), _y_start + _h, false)
+	draw_rectangle(_x_start, _y_start, _x_start + _l*(1 - (attack_cd/attack_cd_value*player.as_factor)), _y_start + _h, false)
 

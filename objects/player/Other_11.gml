@@ -1,8 +1,5 @@
 /// @desc Take some damage
 
-
-
-hp -= 1
 invis_frames = 70
 flash = 3
 

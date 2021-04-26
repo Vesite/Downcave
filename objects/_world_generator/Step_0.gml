@@ -17,9 +17,9 @@ if instance_exists(player) {
 		if chunks_until_biome_change == 0 {
 			chunks_until_biome_change = choose(6, 7, 7, 8, 8, 9)
 			
-			biome = choose(BIOME.ROCK, BIOME.SAND, BIOME.CRYSTAL)
+			biome = RANDOM_BIOME
 			while biome == previous_biome {
-				biome = choose(BIOME.ROCK, BIOME.SAND, BIOME.CRYSTAL)
+				biome = RANDOM_BIOME
 			}
 		}
 		previous_biome = biome
@@ -35,6 +35,9 @@ if instance_exists(player) {
 			    break;
 				case BIOME.CRYSTAL:
 			        var _chunk_list = chunk_list_crystal
+			    break;
+				case BIOME.FLESH:
+			        var _chunk_list = chunk_list_flesh
 			    break;
 			}
 		

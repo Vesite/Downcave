@@ -15,3 +15,5 @@ walk_left = true
 have_turned_to_player = false
 
 falling_timer = 0
+
+event_user(2)

@@ -14,4 +14,4 @@ vsp = random_range(-0, -2.5)
 
 xp_value = 1
 
-time_remain = irandom_range(270, 295)*player.xp_orb_duration_factor
+time_remain = irandom_range(270, 295) + (player.xp_orb_duration_extra*60)

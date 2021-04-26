@@ -18,3 +18,5 @@ while (not place_meeting(x, y + 1, parent_collision)) {
 }
 
 
+if place_meeting(x, y, tentacle) { instance_destroy() }
+

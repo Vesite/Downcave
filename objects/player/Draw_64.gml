@@ -2,6 +2,8 @@
 
 draw_text(GAME_WIDTH*0.87, 40, "Depth: " + string(round(deepest/32) - 5) + "m")
 
+if DEV
+	draw_text(GAME_WIDTH*0.5, GAME_HEIGHT*0.8, _world_generator.depth_var)
 //if DEV
 //	draw_text(GAME_WIDTH*0.5, 40, "Hp " + string(hp))
 
@@ -13,6 +15,7 @@ var _y = GAME_HEIGHT*0.07
 for (var _i = 0; _i < hp; _i++) {
     draw_sprite(s_heart, 0, _x_start + 20*_i, _y)
 }
+
 
 
 

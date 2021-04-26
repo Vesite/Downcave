@@ -15,8 +15,8 @@ if attack_cd == 0 {
 	with (instance_create_layer(x, y, "Projectiles", sentry_bullet)) {
 
 		var _dir = point_direction(x, y, player.x, player.y)
-		hsp = lengthdir_x(move_speed, _dir)*0.3
-		vsp = move_speed*1.2
+		hsp = sign(lengthdir_x(move_speed, _dir))*move_speed*0.23
+		vsp = move_speed*1.3
 	
 	}
 	
