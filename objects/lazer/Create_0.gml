@@ -2,11 +2,11 @@
 
 event_inherited()
 
-attack_cd_value = 80
+attack_cd_value = 70
 attack_cd = 0
-energy_consume = 9
+energy_consume = 8
 
 knockback = 0
 
-damage = 12 //Player damage factor added later
+damage = 15 //Player damage factor added later
 flash_add = 6

@@ -1,5 +1,7 @@
 /// @desc
 
+if fade_in_time > 0 { exit }
+
 //Logic
 if (draw_in_gui == true) or (draw_in_gui == false and not P) {
 

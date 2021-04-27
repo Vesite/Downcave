@@ -189,7 +189,7 @@ add_grid_chunk_line(chunk_2, 4, "11R000R00000R11")
 ds_list_add(chunk_list_flesh, chunk_2)
 
 chunk_3 = ds_grid_create(CHUNK_WIDTH, CHUNK_HEIGHT)
-add_grid_chunk_line(chunk_3, 0, "11R000000111111")
+add_grid_chunk_line(chunk_3, 0, "11R000000101111")
 add_grid_chunk_line(chunk_3, 1, "111RRRR0000R111")
 add_grid_chunk_line(chunk_3, 2, "111111111100R11")
 add_grid_chunk_line(chunk_3, 3, "11R0R1111000R11")
