@@ -105,8 +105,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Biomes",
+    "path": "folders/Sprites/Biomes.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_wall_flesh",

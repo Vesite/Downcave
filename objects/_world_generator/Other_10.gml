@@ -29,3 +29,13 @@ with (parent_enemy) {
 	}
 	
 }
+
+with (weapon_pickup) {
+	
+	if (y < (player.y - 1200)) {
+		
+		instance_destroy()
+		
+	}
+	
+}

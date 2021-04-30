@@ -56,18 +56,5 @@ for (var i = 0; i < ds_list_size(_list); ++i) {
 ds_list_destroy(_list)
 
 //Create Visual
-var _id = instance_create_layer(x,y, "Projectiles", draw_line_object)
-	
-_id.x1 = x
-_id.y1 = y
-_id.x2 = _x_check
-_id.y2 = _y_check
-
-_id.col1 = c_purple
-_id.col2 = c_fuchsia
-_id.width_line = 4
-
-_id.duration_max = 60
-_id.duration = 60	
-
+constructor_draw_line_object(x, y, _x_check, _y_check, 4, c_purple, c_fuchsia, 60, 75)
 

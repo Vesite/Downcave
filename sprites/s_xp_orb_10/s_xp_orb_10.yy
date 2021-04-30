@@ -72,8 +72,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "In-Game Ect",
+    "path": "folders/Sprites/In-Game Ect.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_xp_orb_10",

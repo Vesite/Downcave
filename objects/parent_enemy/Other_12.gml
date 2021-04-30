@@ -9,7 +9,7 @@ if random(1) < _shadow_chance {
 	shadow = true
 	hp = hp*160 + 500
 	
-	damage = 5
+	damage = 1
 	xp_drop = xp_drop*45
 	
 } else if (random(1) < _golden_chance) {
@@ -17,7 +17,7 @@ if random(1) < _shadow_chance {
 	golden = true
 	hp = hp*24 + 50
 	
-	damage = 2
+	damage = 1
 	xp_drop = xp_drop*7
 	
 }

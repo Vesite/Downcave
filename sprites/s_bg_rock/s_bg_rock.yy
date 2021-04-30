@@ -24,13 +24,13 @@
   "gridX": 32,
   "gridY": 32,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"a35c199c-3db8-4480-b92b-1abc60a78da3","path":"sprites/s_bg_big_rock/s_bg_big_rock.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"a35c199c-3db8-4480-b92b-1abc60a78da3","path":"sprites/s_bg_big_rock/s_bg_big_rock.yy",},"LayerId":{"name":"2ca2c128-8ef4-4755-ad7f-426b3d2a4215","path":"sprites/s_bg_big_rock/s_bg_big_rock.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"a35c199c-3db8-4480-b92b-1abc60a78da3","path":"sprites/s_bg_big_rock/s_bg_big_rock.yy",},"LayerId":{"name":"41debc77-f9c7-4d70-8ed2-30ffdef6a5be","path":"sprites/s_bg_big_rock/s_bg_big_rock.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"s_bg_big_rock","path":"sprites/s_bg_big_rock/s_bg_big_rock.yy",},"resourceVersion":"1.0","name":"a35c199c-3db8-4480-b92b-1abc60a78da3","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"a35c199c-3db8-4480-b92b-1abc60a78da3","path":"sprites/s_bg_rock/s_bg_rock.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"a35c199c-3db8-4480-b92b-1abc60a78da3","path":"sprites/s_bg_rock/s_bg_rock.yy",},"LayerId":{"name":"2ca2c128-8ef4-4755-ad7f-426b3d2a4215","path":"sprites/s_bg_rock/s_bg_rock.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"a35c199c-3db8-4480-b92b-1abc60a78da3","path":"sprites/s_bg_rock/s_bg_rock.yy",},"LayerId":{"name":"41debc77-f9c7-4d70-8ed2-30ffdef6a5be","path":"sprites/s_bg_rock/s_bg_rock.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"s_bg_rock","path":"sprites/s_bg_rock/s_bg_rock.yy",},"resourceVersion":"1.0","name":"a35c199c-3db8-4480-b92b-1abc60a78da3","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"s_bg_big_rock","path":"sprites/s_bg_big_rock/s_bg_big_rock.yy",},
+    "spriteId": {"name":"s_bg_rock","path":"sprites/s_bg_rock/s_bg_rock.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 0.0,
@@ -42,7 +42,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"c7a3ceac-c291-48f0-b389-679238588b93","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"a35c199c-3db8-4480-b92b-1abc60a78da3","path":"sprites/s_bg_big_rock/s_bg_big_rock.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"c7a3ceac-c291-48f0-b389-679238588b93","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"a35c199c-3db8-4480-b92b-1abc60a78da3","path":"sprites/s_bg_rock/s_bg_rock.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -59,9 +59,9 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"s_bg_big_rock","path":"sprites/s_bg_big_rock/s_bg_big_rock.yy",},
+    "parent": {"name":"s_bg_rock","path":"sprites/s_bg_rock/s_bg_rock.yy",},
     "resourceVersion": "1.3",
-    "name": "s_bg_big_rock",
+    "name": "s_bg_rock",
     "tags": [],
     "resourceType": "GMSequence",
   },
@@ -71,11 +71,11 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Biomes",
+    "path": "folders/Sprites/Biomes.yy",
   },
   "resourceVersion": "1.0",
-  "name": "s_bg_big_rock",
+  "name": "s_bg_rock",
   "tags": [],
   "resourceType": "GMSprite",
 }

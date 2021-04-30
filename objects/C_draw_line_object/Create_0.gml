@@ -12,4 +12,3 @@ width_line = undefined
 
 duration_max = undefined
 duration = undefined
-

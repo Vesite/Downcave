@@ -4,9 +4,7 @@ if player.invis_frames == 0 {
 	
 	player.hp -= damage
 	
-	with (instance_create_layer(player.x, player.y - 12, "Top", draw_damage)) {
-		text = other.damage	
-	}
+	constructor_draw_damage(player.x, player.y, damage, 60)
 	
 	with (player) {
 		

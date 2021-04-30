@@ -325,8 +325,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Ect",
+    "path": "folders/Sprites/Ect.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_smoke_1",

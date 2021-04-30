@@ -1,5 +1,12 @@
 
 
+function calculate_regen_total(_max, _flat_regen) {
+	
+	return _max/(60*10) + _flat_regen
+	
+}
+
+
 function play_sound_ij(_sound, _p1, _p2) {
 	
 	audio_sound_pitch(_sound, random_range(_p1, _p2))

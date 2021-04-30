@@ -34,13 +34,13 @@ if hp <= 0 {
 var _id = collision_point(x, y, bg_big, false, true)
 if _id != noone {
 	
-	if _id.sprite_index == s_bg_big_rock
+	if _id.sprite_index == s_bg_rock
 		player_biome_in_currently = BIOME.ROCK
-	else if _id.sprite_index == s_bg_big_sandstone
+	else if _id.sprite_index == s_bg_sandstone
 		player_biome_in_currently = BIOME.SAND
-	else if _id.sprite_index == s_bg_big_crystal
+	else if _id.sprite_index == s_bg_crystal
 		player_biome_in_currently = BIOME.CRYSTAL
-	else if _id.sprite_index == s_bg_big_flesh
+	else if _id.sprite_index == s_bg_flesh
 		player_biome_in_currently = BIOME.FLESH
 	
 }
@@ -203,19 +203,14 @@ if deepest < y {
 	deepest = y	
 }
 
-if x < 0 or x > room_width {
-	
-	//Die
-	event_user(0)
-	
-}
+//Stay in room!
+x = clamp(x, 0, room_width)
 
 invis_frames = max(invis_frames - 1, 0)
 
 //Energy % Regen
-weapon_energy_regen_total = weapon_energy_max/(60*10) + weapon_energy_flat_regen
+weapon_energy_regen_total = calculate_regen_total(weapon_energy_max, weapon_energy_flat_regen)
 weapon_energy += weapon_energy_regen_total
-
 weapon_energy = min(weapon_energy, weapon_energy_max)
 
 if hsp > 0 { image_xscale = -1 }

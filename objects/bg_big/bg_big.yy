@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "s_bg_big_rock",
-    "path": "sprites/s_bg_big_rock/s_bg_big_rock.yy",
+    "name": "s_bg_rock",
+    "path": "sprites/s_bg_rock/s_bg_rock.yy",
   },
   "solid": false,
   "visible": true,

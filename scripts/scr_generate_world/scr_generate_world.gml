@@ -28,13 +28,13 @@ function generate_chunk(_depth_var, _y_start, _chunk_grid, _have_weapon, _biome)
 		
 		switch (_biome) {
 		    case BIOME.ROCK:
-		        var _bg_sprite = s_bg_big_rock
+		        var _bg_sprite = s_bg_rock
 				var _wall_sprite = s_rock_bricks
 				ds_list_add(_enemies_below_list, skull_1)
 				_enemy_below_mult = 1.1
 		    break;
 		    case BIOME.SAND:
-		        var _bg_sprite = s_bg_big_sandstone
+		        var _bg_sprite = s_bg_sandstone
 				var _wall_sprite = s_sandstone
 				ds_list_add(_enemies_below_list, tentacle)
 				ds_list_add(_enemies_below_list, tentacle)
@@ -45,7 +45,7 @@ function generate_chunk(_depth_var, _y_start, _chunk_grid, _have_weapon, _biome)
 				_enemy_above_mult = 1.1
 		    break;
 			case BIOME.CRYSTAL:
-		        var _bg_sprite = s_bg_big_crystal
+		        var _bg_sprite = s_bg_crystal
 				var _wall_sprite = s_crystal
 				ds_list_add(_enemies_below_list, sentry)
 				ds_list_add(_enemies_below_list, slime)
@@ -53,7 +53,7 @@ function generate_chunk(_depth_var, _y_start, _chunk_grid, _have_weapon, _biome)
 				_enemy_below_mult = 1.2
 		    break;
 			case BIOME.FLESH:
-		        var _bg_sprite = s_bg_big_flesh
+		        var _bg_sprite = s_bg_flesh
 				var _wall_sprite = s_wall_flesh
 				ds_list_add(_enemies_below_list, ball)
 				ds_list_add(_enemies_below_list, ball)

@@ -93,8 +93,8 @@
     "resourceType": "GMNineSliceData",
   },
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "In-Game Ect",
+    "path": "folders/Sprites/In-Game Ect.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_weapon_pickup",

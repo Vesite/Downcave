@@ -31,7 +31,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "button_dynamic",
+  "name": "C_button_dynamic",
   "tags": [],
   "resourceType": "GMObject",
 }
