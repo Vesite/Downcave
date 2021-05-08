@@ -5,6 +5,7 @@ event_inherited()
 
 if P exit
 
+//Check "on_ground"
 if place_meeting(x, y + 1, parent_collision) {
 	on_ground = true
 } else {
@@ -19,7 +20,8 @@ if on_ground {
 	if random(1) < 0.015 {
 	
 		vsp -= random_range(1.5, 6)
-	
+		hsp += random_range(-2, 2)
+		
 	}
 }
 
@@ -32,7 +34,7 @@ if on_ground {
 		{
 			x += sign(hsp)	
 		}
-		hsp = 0
+		hsp = -hsp
 	}
 	x += hsp
 

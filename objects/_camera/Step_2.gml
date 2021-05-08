@@ -2,6 +2,18 @@
 
 if P exit
 
+if WORLD_GEN_ACTIVE {
+	
+	var _w = global.view_width/view_zoom
+	var _h = global.view_height/view_zoom
+
+	camera_set_view_size(view_camera[0], _w, _h)
+	camera_set_view_pos(view_camera[0], 0, 0)
+	
+	exit
+	
+}
+
 if (keyboard_check(vk_pageup)) {
 	view_zoom += 0.1
 }
@@ -34,3 +46,5 @@ if not is_undefined(follow_target) {
 	camera_set_view_pos(view_camera[0], x - _w/2, y - _h/2) //+ GAME_HEIGHT*0.17)
 	
 }
+
+

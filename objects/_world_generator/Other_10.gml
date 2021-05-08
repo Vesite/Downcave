@@ -1,5 +1,7 @@
 /// @desc
 
+if not instance_exists(player) { exit }
+
 with (parent_collision) {
 	
 	if (y < (player.y - 1200)) {

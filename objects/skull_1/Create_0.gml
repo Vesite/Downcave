@@ -11,4 +11,9 @@ do_x_flip = false
 follow_range = 130
 following = false
 
+//Sin
+increase = 0
+random_number = random_range(0, 1000)
+random_amount = random_range(-20, 20)
+
 event_user(2)

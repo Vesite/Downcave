@@ -8,8 +8,8 @@ depth_var = 1
 chunks_until_weapon = choose(3, 4, 4, 5)
 chunks_until_biome_change = choose(7, 7, 8, 8, 9, 10, 11)
 
-#macro RANDOM_BIOME (choose(BIOME.SAND, BIOME.ROCK, BIOME.CRYSTAL, BIOME.FLESH))
-#macro START_BIOME (choose(BIOME.SAND, BIOME.ROCK, BIOME.CRYSTAL))
+#macro RANDOM_BIOME (choose(BIOME.SAND, BIOME.ROCK, BIOME.CRYSTAL, BIOME.FLESH, BIOME.MARBLE, BIOME.HELL, BIOME.SNAKE))
+#macro START_BIOME (choose(BIOME.SAND, BIOME.ROCK, BIOME.CRYSTAL, BIOME.FLESH, BIOME.MARBLE, BIOME.HELL, BIOME.SNAKE))
 
 biome = START_BIOME
 enum BIOME {
@@ -17,10 +17,17 @@ enum BIOME {
 	ROCK,
 	SAND,
 	CRYSTAL,
-	FLESH
+	FLESH,
+	MARBLE,
+	HELL,
+	SNAKE
 	
 }
 previous_biome = biome
+
+
+x_start = 0
+
 
 /*
 General Rules:
@@ -80,7 +87,6 @@ add_grid_chunk_line(chunk_6, 4, "11110001R000111")
 ds_list_add(chunk_list_rock, chunk_6)
 
 #endregion
-
 
 #region Chunks Sand
 
@@ -206,4 +212,12 @@ ds_list_add(chunk_list_flesh, chunk_4)
 
 #endregion
 
+chunk_list_marble = chunk_list_flesh
+chunk_list_hell = chunk_list_rock
+chunk_list_snake = chunk_list_rock
+
+
 previous_chunk = chunk_1
+
+
+

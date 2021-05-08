@@ -16,9 +16,16 @@ enum PLAYER_ALIVE_STATE {
 	
 }
 
+
+//Player
+#macro PLAYER_BASE_ACC 0.3
+#macro PLAYER_BASE_MAX_HSP 1.4
+#macro PLAYER_BASE_MAX_VSP 3
+#macro PLAYER_BASE_FRIC_AIR 0.05
+#macro PLAYER_BASE_FRIC 0.1
+
 //Ect
 player_biome_in_currently = BIOME.ROCK
-deepest = 0
 flash = 0
 orb_energy_gain = 3
 
@@ -51,7 +58,7 @@ weapon_energy_regen_total = calculate_regen_total(weapon_energy_max, weapon_ener
 //Movement
 hsp = 0
 vsp = 0
-gravity_player = GRAVITY
+gravity_player = PLAYER_GRAVITY
 
 //Jumps
 jump_power = 1.5

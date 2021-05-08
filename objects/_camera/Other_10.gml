@@ -1,5 +1,7 @@
 /// @desc
 
+
+
 //Check if "player" exists
 if (instance_exists(player))
 {

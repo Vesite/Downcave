@@ -4,6 +4,7 @@ draw_set_valign(fa_middle)
 draw_set_font(font_pixel_12x)
 global.paused = false
 global.inside_button = false
+global.deepest = 0
 
 randomize()
 

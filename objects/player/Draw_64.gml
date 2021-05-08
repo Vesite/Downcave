@@ -1,6 +1,6 @@
 /// @desc
 
-draw_text(GAME_WIDTH*0.87, 40, "Depth: " + string(round(deepest/32) - 5) + "m")
+draw_text(GAME_WIDTH*0.87, 40, "Depth: " + string(round(global.deepest/32) - 5) + "m")
 
 if DEV
 	draw_text(GAME_WIDTH*0.5, GAME_HEIGHT*0.8, _world_generator.depth_var)

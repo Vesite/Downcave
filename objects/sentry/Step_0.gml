@@ -1,6 +1,9 @@
 /// @desc
 
 if P exit
+if not instance_exists(player) exit
+
+
 
 if y > player.y {
 	image_yscale = 1

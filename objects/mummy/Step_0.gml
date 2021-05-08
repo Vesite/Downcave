@@ -2,15 +2,14 @@
 
 if P exit
 
-if walk_left {
+if walk_direction == DIRECTION.LEFT {
 	
 	image_xscale = 1
 	
 	hsp -= acc
-	
 	hsp = approach(hsp, -hsp_max, acc*1.1)
 	
-} else {
+} else if walk_direction == DIRECTION.RIGHT {
 	
 	image_xscale = -1
 	
@@ -19,7 +18,15 @@ if walk_left {
 	
 }
 
+//Check "on_ground"
 if place_meeting(x, y + 1, parent_collision) {
+	on_ground = true
+} else {
+	on_ground = false
+}
+
+//Jump
+if on_ground {
 	
 	if random(1) < 0.02 {
 		vsp -= random_range(3, 4.5)
@@ -27,7 +34,10 @@ if place_meeting(x, y + 1, parent_collision) {
 	
 	falling_timer = 0
 	
-} else {
+}
+
+//Despawn
+if not on_ground {
 	
 	//If we are falling
 	falling_timer += 1
@@ -35,22 +45,33 @@ if place_meeting(x, y + 1, parent_collision) {
 }
 if falling_timer > 60*16 { instance_destroy() }
 
+
 vsp += grv
 vsp = approach(vsp, vsp_max, grv*1.1)
 
 
-//Turn towers the player once
-if point_distance(x, y, player.x, player.y) < 70
-and not collision_line(x, y, player.x, player.y, parent_collision, false, true)
-and have_turned_to_player == false {
-	
-	have_turned_to_player = true
-	
-	if player.x > x { walk_left = false } 
-	if player.x <= x { walk_left = true } 
-	
-}
+#region Turn towards the player once
 
+	if instance_exists(player) {
+	
+		if point_distance(x, y, player.x, player.y) < 80
+		and not collision_line(x, y, player.x, player.y, parent_collision, false, true)
+		and have_turned_to_player == false {
+		
+			if ((player.x > x) and (walk_direction == DIRECTION.LEFT)) {
+				have_turned_to_player = true
+				walk_direction = DIRECTION.RIGHT
+			}
+		
+			if ((player.x < x) and (walk_direction == DIRECTION.RIGHT)) {
+				have_turned_to_player = true
+				walk_direction = DIRECTION.LEFT
+			}	
+	
+		}
+	}
+
+#endregion
 
 
 #region Collision (Vertical and Horizontal)
@@ -63,7 +84,8 @@ and have_turned_to_player == false {
 			x += sign(hsp)	
 		}
 		hsp = 0
-		walk_left = not walk_left
+		if walk_direction == DIRECTION.LEFT { walk_direction = DIRECTION.RIGHT }
+		else if walk_direction == DIRECTION.RIGHT { walk_direction = DIRECTION.LEFT}
 	}
 	x += hsp
 
@@ -81,7 +103,5 @@ and have_turned_to_player == false {
 #endregion
 
 if place_meeting(x, y, parent_collision) {
-	instance_destroy()	
-	//show_message("sbuisdgbuisgbui")
+	instance_destroy()
 }
-

@@ -17,7 +17,7 @@ function add_grid_chunk_line(_grid, _y, _string) {
 /*
 Big function to generate a chunk from some information
 */
-function generate_chunk(_depth_var, _y_start, _chunk_grid, _have_weapon, _biome) {
+function generate_chunk(_depth_var, _y_start, _chunk_grid, _have_weapon, _biome, _x_start) {
 	
 	#region Decide variables based on biome
 		
@@ -60,6 +60,18 @@ function generate_chunk(_depth_var, _y_start, _chunk_grid, _have_weapon, _biome)
 				ds_list_add(_enemies_below_list, chest)
 				_enemy_below_mult = 1.4
 		    break;
+			case BIOME.MARBLE:
+		        var _bg_sprite = s_bg_marble
+				var _wall_sprite = s_wall_marble
+		    break;
+			case BIOME.HELL:
+		        var _bg_sprite = s_bg_hell
+				var _wall_sprite = s_wall_hell
+		    break;
+			case BIOME.SNAKE:
+		        var _bg_sprite = s_bg_snake
+				var _wall_sprite = s_wall_snake
+		    break;
 		}
 		
 	#endregion
@@ -67,7 +79,7 @@ function generate_chunk(_depth_var, _y_start, _chunk_grid, _have_weapon, _biome)
 	
 	var _block_list = ds_list_create()
 	
-	with (instance_create_layer(0, _y_start, "Bg_Inst", bg_big)) { sprite_index = _bg_sprite }
+	with (instance_create_layer(_x_start, _y_start, "Bg_Inst", bg_big)) { sprite_index = _bg_sprite }
 	
 	//Loop through the 10-y-layers
 	for (var _y = 0; _y < CHUNK_HEIGHT; _y++) {
@@ -82,7 +94,7 @@ function generate_chunk(_depth_var, _y_start, _chunk_grid, _have_weapon, _biome)
 			if _value_to_id == "R" { _id = choose(wall, noone) }
 			
 			if _id != noone {
-				var _block_id = instance_create_layer(_x*32, _y_start + _y*32, "Instances", _id)
+				var _block_id = instance_create_layer(_x_start + _x*32, _y_start + _y*32, "Instances", _id)
 				_block_id.sprite_index = _wall_sprite
 				ds_list_add(_block_list, _block_id)
 			}
@@ -116,16 +128,17 @@ function generate_chunk(_depth_var, _y_start, _chunk_grid, _have_weapon, _biome)
 	#region Spawn enemies
 	
 		//var _max = 2 + ((_y_start)/(round((32*CHUNK_HEIGHT))*3)) //The higher this number is the more enemies
-		var _max_2 = 4 + _depth_var/2.5 + 0.1*power(_depth_var, 1.3) + 0.02*power(_depth_var, 1.7) //The higher this number is the more enemies
+		var _max_2 = round(4 + _depth_var/2.5 + 0.1*power(_depth_var, 1.3) + 0.02*power(_depth_var, 1.7)) //The higher this number is the more enemies
 		var _enemy_amount = irandom_range(0, _max_2)
+		_enemy_amount = max(0, _enemy_amount)
 		//show_debug_message("Enemies Tried to Spawn 1: 0 - " + string(_max))
-		show_debug_message("Enemies Tried to Spawn 2: 0 - " + string(_max_2))
+		//show_debug_message("Enemies Tried to Spawn 2: 0 - " + string(_max_2))
 		
 		//Spawn enemies above
 		if (ds_list_size(_enemies_above_list) > 0) and (_depth_var > 1) {
 			for (var _i = 0; _i < (round(_enemy_amount*_enemy_above_mult)); _i++) {
 		
-			    var _x = random_range(0, GAME_WIDTH)
+			    var _x = _x_start + random_range(0, (32*CHUNK_WIDTH))
 				var _y = random_range(_y_start - (32*CHUNK_HEIGHT)*4, _y_start - (32*CHUNK_HEIGHT)*4 + (32*CHUNK_HEIGHT) - 16)
 		
 				var _indx = irandom_range(0, ds_list_size(_enemies_above_list) - 1)
@@ -143,8 +156,8 @@ function generate_chunk(_depth_var, _y_start, _chunk_grid, _have_weapon, _biome)
 		if (ds_list_size(_enemies_below_list) > 0) {
 			for (var _i = 0; _i < (round(_enemy_amount*_enemy_below_mult)); _i++) {
 		
-			    var _x = random_range(0, GAME_WIDTH)
-				var _y = random_range(_y_start, _y_start + (32*CHUNK_HEIGHT) - 16)
+			    var _x = _x_start + random_range(0, (32*CHUNK_WIDTH))
+				var _y = _y_start + random_range(8, (32*CHUNK_HEIGHT) - 8)
 		
 				var _indx = irandom_range(0, ds_list_size(_enemies_below_list) - 1)
 				var _enemy = ds_list_find_value(_enemies_below_list, _indx)
@@ -163,7 +176,6 @@ function generate_chunk(_depth_var, _y_start, _chunk_grid, _have_weapon, _biome)
 	ds_list_destroy(_block_list)
 	ds_list_destroy(_enemies_above_list)
 	ds_list_destroy(_enemies_below_list)
-	
 	
 }
 

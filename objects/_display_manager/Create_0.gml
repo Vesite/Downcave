@@ -13,6 +13,7 @@ if (assign_singleton() == false)	exit
 	//At this point the variables "view_height" and "view_width" never change (?)
 	
 	max_window_scale = min(floor(display_get_width()/global.view_width), floor(display_get_height()/global.view_height))
+	max_window_scale = max(1, max_window_scale)
 	if(global.view_height*max_window_scale == display_get_height())
 	    max_window_scale--
     
@@ -20,7 +21,7 @@ if (assign_singleton() == false)	exit
 
 	window_set_size(global.view_width*window_scale, global.view_height*window_scale)
 	alarm[0] = 1
-
+	
 	surface_resize(application_surface, global.view_width*window_scale, global.view_height*window_scale)
 	
 	display_set_gui_size(global.view_width, global.view_height)

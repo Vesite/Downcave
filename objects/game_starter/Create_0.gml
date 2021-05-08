@@ -22,5 +22,11 @@ while (object_exists(o_index))
 
 #endregion
 
+if WORLD_GEN_ACTIVE {
+	room_goto(room_world_gen_test)
+} else {
+	room_goto(room_1)
+}
+
 //Goto next room to start the game
-room_goto_next()
+

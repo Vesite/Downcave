@@ -155,16 +155,16 @@ if place_meeting(x, y + 8, parent_collision) {
 	
 	//if vsp > 0 { gravity_player = GRAVITY*4 }
 	
-	if vsp < 0 { gravity_player = GRAVITY*0.5 }
+	if vsp < 0 { gravity_player = PLAYER_GRAVITY*0.5 }
 	
 	
 } else {
 	
 	//Inc Grv when falling
 	if vsp >= 0 {
-		gravity_player = GRAVITY
+		gravity_player = PLAYER_GRAVITY
 	} else {
-		gravity_player = GRAVITY*1.1
+		gravity_player = PLAYER_GRAVITY*1.1
 	}
 	
 }
@@ -199,8 +199,8 @@ y += vsp
 
 #endregion
 
-if deepest < y {
-	deepest = y	
+if global.deepest < y {
+	global.deepest = y	
 }
 
 //Stay in room!
