@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "sfx_shotgun_2.wav",
-  "duration": 0.632029,
+  "duration": 0.627029,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

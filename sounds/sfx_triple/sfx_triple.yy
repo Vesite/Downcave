@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "sfx_triple.wav",
-  "duration": 0.220306,
+  "duration": 0.215306,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

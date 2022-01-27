@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "sfx_get_weapon.wav",
-  "duration": 0.455612,
+  "duration": 0.450612,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

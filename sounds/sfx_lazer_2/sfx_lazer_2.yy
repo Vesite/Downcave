@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "sfx_lazer_2.wav",
-  "duration": 0.496973,
+  "duration": 0.491973,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "sfx_flamethrower.wav",
-  "duration": 0.078288,
+  "duration": 0.073288,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

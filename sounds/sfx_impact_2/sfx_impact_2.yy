@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "sfx_impact_2.wav",
-  "duration": 0.055385,
+  "duration": 0.050385,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",
